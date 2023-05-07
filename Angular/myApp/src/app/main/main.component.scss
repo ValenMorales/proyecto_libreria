@@ -1,0 +1,71 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+:root{
+    --color--primario:rgb(245,206,6) ;
+    --color--secundario:rgb(0,102,198,);
+}
+
+.mat-menu-panel {
+  top: 48px; /* ajusta este valor según sea necesario */
+
+}
+.mat-menu-item {
+  padding-top: 8px; /* ajusta este valor según sea necesario */
+  padding-bottom: 8px; /* ajusta este valor según sea necesario */
+}
+
+.principal{
+    display: flex;
+    flex-direction: row;
+    /* distribuye los elementos uniformemente a lo largo del eje principal */
+    justify-content: space-between; 
+    align-items: center;
+    /*
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    */
+}
+
+.principal button {
+    background-color:var(--color--secundario);
+    opacity: 0.5;
+    border-color: antiquewhite;
+    /* Agrega un espacio interno al botón */
+    padding: 10px 25px;
+     /* Agrega bordes redondeados al botón */ 
+    border-radius: 5px;
+    /* Cambia el cursor al pasar por encima del botón */
+    cursor: pointer; 
+    display: flex;
+  }
+  .principal .fas {
+    /* Agrega un espacio entre el icono y el texto del botón */
+    margin-right: 5px; 
+  }
+
+.principal h1 {
+    color: rgb(245,206,6) ;
+}
+.principal img{
+background-image: url("/Angular/myApp/src/assets/informacion.png");
+width: 20px;
+}
+
+#salud {
+width: 500px;
+display: flex; 
+justify-content: center;
+border: 10px solid rgb(0,102,198,);
+margin: auto;
+cursor: pointer;
+
+}
+
+.salud h1 {
+  color:rgb(0,102,198,);
+  display: flex;
+  justify-content: center;
+}
