@@ -22,7 +22,7 @@
             <h5 id="current_date"></h5>
             <h1>REVISTA UAM</h1>
             <button>crear cuenta</button>
-            <button>
+            <button (click)="redirectLogin()" >
                 iniciar seción
                 <img [src]="logo" alt="My Image">
             </button>
@@ -30,12 +30,14 @@
     </header>
     <hr>
     <main>
-     <section class="salud">
+     <section class="facultad">
         <h1>Facultad de la salud</h1>
-        <img id="salud" [src]="imageSalud" alt="holi">
+        <img  [src]="imageSalud" alt="holi">
+        <h1>Facultad de estudios sociales</h1>
+        <img [src]="imageEstudiosSociales" alt="cargando..">
+        <h1>Facultad de Ingenieria</h1>
+        <img [src]="imageIngenieria" alt="cargando..">
      </section>
-     <section class="ingenieria"></section>
-     <section class="EstudiosSociales"></section>
     </main>
     <footer>
     </footer>
