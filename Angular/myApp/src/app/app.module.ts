@@ -7,8 +7,13 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
-import { Main2Component } from './login/login.component';
-
+import { FooterComponent } from './public/template/footer/footer.component';
+import { HeaderComponent } from './public/template/header/header.component';
+import { NavbarComponent } from './public/template/navbar/navbar.component';
+import { NotFoundComponent } from './public/errors/not-found/not-found.component';
+import { InternalServerErrorComponent } from './public/errors/internal-server-error/internal-server-error.component';
+import { HttpClientModule } from "@angular/common/http";
+import { HomeComponent } from './public/general/home/home.component'
 
 
 
@@ -21,7 +26,12 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     MainComponent,
-    Main2Component,
+    FooterComponent,
+    HeaderComponent,
+    NavbarComponent,
+    NotFoundComponent,
+    InternalServerErrorComponent,
+    HomeComponent,
     
   ],
   imports: [
@@ -30,6 +40,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     MatSlideToggleModule,
     MatMenuModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
