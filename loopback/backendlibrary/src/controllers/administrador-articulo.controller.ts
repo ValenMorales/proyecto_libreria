@@ -46,6 +46,8 @@ export class AdministradorArticuloController {
     return this.administradorRepository.articulos(id).find(filter);
   }
 
+  
+
   @post('/administradors/{id}/articulos', {
     responses: {
       '200': {
@@ -107,4 +109,6 @@ export class AdministradorArticuloController {
   ): Promise<Count> {
     return this.administradorRepository.articulos(id).delete(where);
   }
+
+
 }
