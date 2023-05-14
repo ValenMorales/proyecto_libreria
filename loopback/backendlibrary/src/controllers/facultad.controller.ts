@@ -105,7 +105,7 @@ export class FacultadController {
     },
   })
   async findById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @param.filter(Facultad, {exclude: 'where'}) filter?: FilterExcludingWhere<Facultad>
   ): Promise<Facultad> {
     return this.facultadRepository.findById(id, filter);
@@ -116,7 +116,7 @@ export class FacultadController {
     description: 'Facultad PATCH success',
   })
   async updateById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @requestBody({
       content: {
         'application/json': {
@@ -134,7 +134,7 @@ export class FacultadController {
     description: 'Facultad PUT success',
   })
   async replaceById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @requestBody() facultad: Facultad,
   ): Promise<void> {
     await this.facultadRepository.replaceById(id, facultad);
@@ -144,7 +144,7 @@ export class FacultadController {
   @response(204, {
     description: 'Facultad DELETE success',
   })
-  async deleteById(@param.path.number('id') id: number): Promise<void> {
+  async deleteById(@param.path.string('id') id: string): Promise<void> {
     await this.facultadRepository.deleteById(id);
   }
 }

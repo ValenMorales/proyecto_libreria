@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder, FormGroup, MinLengthValidator, Validators } from '@angular/forms';
 import { UserCredentialsModel } from 'src/app/modelos/user-credentials.model';
+import { SecurityService } from 'src/app/services/security.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ import { UserCredentialsModel } from 'src/app/modelos/user-credentials.model';
 export class LoginComponent implements OnInit{
   form: FormGroup = new FormGroup({});
 constructor (
-  private fb: FormBuilder
+  private fb: FormBuilder,
+  private securityService :SecurityService
 ) {}
 
 
@@ -29,13 +31,22 @@ createForm (){
 });
 }
 
-Login(){
+Register(){
   if (this.form.invalid){
 
   } else {
     let modelo = new UserCredentialsModel();
     modelo.username = this.getForm['username'].value;
     modelo.password = this.getForm['password'].value;
+    console.log(modelo.username, modelo.password);
+    this.securityService.Register(modelo).subscribe({
+      next: (data: any) =>{
+          console.log(data);
+      } ,error : (error:any) =>{
+        console.log("hubo un error al conectar el backend");
+        console.log (error);
+      }
+    })
   }
 }
 

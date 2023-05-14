@@ -12,7 +12,21 @@ export class SecurityService {
    
    }
 
-   Login(modelo: UserCredentialsModel): Observable<any>{
-    return this.http.get<any>('http://localhost:3000/administrators');
+   Register(modelo: UserCredentialsModel): Observable<any>{
+    return this.http.post<any>("http://localhost:3000/administradors", {
+      //nombre: "sergio",
+      //correo: modelo.username,
+    //cedula: "10012929",
+      //contraseña:modelo.password
+     // nombre: "sergio",
+    //  correo: "ajlk@gmail.com",
+     // cedula: "10012929",
+    //  contraseña: "lajskjadsdfjlak"
+    nombre: modelo.username,
+    correo: modelo.email,
+    cedula: modelo.cedula,
+    contrasena: modelo.password
+
+    });
    }
 }

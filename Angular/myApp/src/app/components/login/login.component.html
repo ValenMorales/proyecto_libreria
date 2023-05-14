@@ -25,7 +25,7 @@
             </section>
         </div>
         <div class="input-submit">
-            <button [disabled]="getForm['username'].errors || getForm['password'].errors" type="button" name= "btn_login" (click)="Login()"class="btn btn-primary btn-block mb-4">Sign in</button>
+            <button [disabled]="getForm['username'].errors || getForm['password'].errors" type="button" name= "btn_login" (click)="Register()"class="btn btn-primary btn-block mb-4">Sign in</button>
         </div>
         <div class="sign-up-link">
             <p>Don't have account? <a href="#" [routerLink]="['/signup']">Sign Up</a></p>

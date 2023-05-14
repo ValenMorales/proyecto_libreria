@@ -40,7 +40,7 @@ export class AdministradorArticuloController {
     },
   })
   async find(
-    @param.path.string('id') id: string,
+    @param.path.string('id') id: string ,
     @param.query.object('filter') filter?: Filter<Articulo>,
   ): Promise<Articulo[]> {
     return this.administradorRepository.articulos(id).find(filter);
