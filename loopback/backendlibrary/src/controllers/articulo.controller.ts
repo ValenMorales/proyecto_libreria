@@ -105,7 +105,7 @@ export class ArticuloController {
     },
   })
   async findById(
-    @param.path.number('id') id: number,
+    @param.path.number('id') id: string,
     @param.filter(Articulo, {exclude: 'where'}) filter?: FilterExcludingWhere<Articulo>
   ): Promise<Articulo> {
     return this.articuloRepository.findById(id, filter);
@@ -116,7 +116,7 @@ export class ArticuloController {
     description: 'Articulo PATCH success',
   })
   async updateById(
-    @param.path.number('id') id: number,
+    @param.path.number('id') id: string,
     @requestBody({
       content: {
         'application/json': {
@@ -134,7 +134,7 @@ export class ArticuloController {
     description: 'Articulo PUT success',
   })
   async replaceById(
-    @param.path.number('id') id: number,
+    @param.path.number('id') id: string,
     @requestBody() articulo: Articulo,
   ): Promise<void> {
     await this.articuloRepository.replaceById(id, articulo);
@@ -144,7 +144,7 @@ export class ArticuloController {
   @response(204, {
     description: 'Articulo DELETE success',
   })
-  async deleteById(@param.path.number('id') id: number): Promise<void> {
+  async deleteById(@param.path.number('id') id: string): Promise<void> {
     await this.articuloRepository.deleteById(id);
   }
 }

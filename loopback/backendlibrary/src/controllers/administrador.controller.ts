@@ -37,7 +37,6 @@ export class AdministradorController {
         'application/json': {
           schema: getModelSchemaRef(Administrador, {
             title: 'NewAdministrador',
-            exclude: ['id'],
           }),
         },
       },
@@ -105,18 +104,21 @@ export class AdministradorController {
     },
   })
   async findById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @param.filter(Administrador, {exclude: 'where'}) filter?: FilterExcludingWhere<Administrador>
   ): Promise<Administrador> {
     return this.administradorRepository.findById(id, filter);
   }
+
+
+  
 
   @patch('/administradors/{id}')
   @response(204, {
     description: 'Administrador PATCH success',
   })
   async updateById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @requestBody({
       content: {
         'application/json': {
@@ -134,7 +136,7 @@ export class AdministradorController {
     description: 'Administrador PUT success',
   })
   async replaceById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @requestBody() administrador: Administrador,
   ): Promise<void> {
     await this.administradorRepository.replaceById(id, administrador);
@@ -144,7 +146,10 @@ export class AdministradorController {
   @response(204, {
     description: 'Administrador DELETE success',
   })
-  async deleteById(@param.path.number('id') id: number): Promise<void> {
+  async deleteById(@param.path.string('id') id: string): Promise<void> {
     await this.administradorRepository.deleteById(id);
   }
+
+
+  
 }

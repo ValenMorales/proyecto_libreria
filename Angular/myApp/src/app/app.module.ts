@@ -15,8 +15,8 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeadminComponent } from './components/homeadmin/homeadmin.component';
 import { InternalServerErrorComponent } from './public/errors/internal-server-error/internal-server-error.component';
 import { NotFoundComponent } from './public/errors/not-found/not-found.component';
-
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 
 const routes: Routes = [
@@ -39,6 +39,9 @@ const routes: Routes = [
     
   ],
   imports: [
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
