@@ -6,8 +6,8 @@ import {ArticuloAdmin} from './articulo-admin.model';
 export class Administrador extends Entity {
   @property({
     type: 'string',
-    id: true,
-    generated: true,
+    id:true,
+    generated:true
   })
   id?: string;
 

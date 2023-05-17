@@ -30,7 +30,7 @@ export class Autor extends Entity {
 
   @property({
     type: 'string',
-    default: none,
+    default: "",
   })
   cedula?: string;
 
