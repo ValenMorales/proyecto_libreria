@@ -1,22 +1,21 @@
 <body>
     <div class="signup-box">
+        <form [formGroup] = "form">
         <div class="signup-header">
             <header>Sign-Up</header>
         </div>
         <div class="input-box">
-            <input type="text" class="input-field" placeholder="Email" autocomplete="off" required>
+            <input formControlName="name" name="name" type="text" class="form-control" placeholder="nombre" autocomplete="off" required/>
         </div>
         <div class="input-box">
-            <input type="text" class="input-field" placeholder="Username" autocomplete="off" required>
+            <input formControlName='cedula' name="cedula" type="text" class="form-control" placeholder="cedula" autocomplete="off" required/>
         </div>
         <div class="input-box">
-            <input type="text" class="input-field" placeholder="Name" autocomplete="off" required>
+            <input formControlName="email" name="email" type="text" class="form-control" placeholder="correo" autocomplete="off" required/>
         </div>
+       
         <div class="input-box">
-            <input type="text" class="input-field" placeholder="Last name" autocomplete="off" required>
-        </div>
-        <div class="input-box">
-            <input type="password" class="input-field" placeholder="Password" autocomplete="off" required>
+            <input formControlName="password" name="password" type="text" class="form-control" placeholder="contraseña" autocomplete="off" required/>
         </div>
         <div class="forgot">
             <section>
@@ -25,8 +24,9 @@
             </section>
         </div>
         <div class="input-submit">
-            <button class="submit-btn" id="submit"></button>
+            <button [disabled]="getForm['name'].errors || getForm['password'].errors" type="button" name= "btn_login" (click)="Register()"class="btn btn-primary btn-block mb-4">Sign up</button>
             <label for="submit">Sign Up</label>
         </div>
+    </form>
     </div>
 </body>

@@ -6,6 +6,13 @@ export class Facultad extends Entity {
   @property({
     type: 'string',
     id: true,
+    generated: true,
+  })
+  id?: string;
+  
+  @property({
+    type: 'string',
+    id: true,
     generated: false,
     required: true,
   })

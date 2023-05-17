@@ -1,20 +1,25 @@
 <body>
-    <div class="login-box">
+    <form [formGroup] = "form">
         <div class="login-header">
             <header>Login</header>
         </div>
         <div class="input-box">
-            <input type="text" class="input-field" placeholder="Email" autocomplete="off" required>
+            <input formControlName="username" type="text" name="usuario"class="form-control" />
+            <div *ngIf="getForm['username'].errors && (getForm['password'].dirty || getForm['password'].touched)" class='error-message'> 
+                <label>por favor ingrese un usuario valido </label>
+            </div>
         </div>
         <div class="input-box">
-            <input type="password" class="input-field" placeholder="Password" autocomplete="off" required>
+            <input  formControlName="password" type="password" class="form-control" />
+            <div *ngIf="getForm['password'].errors && (getForm['password'].dirty || getForm['password'].touched)" class='error-message'> 
+                <label>por favor ingrese una contraseña valida valido </label>
+            </div>
         </div>
         <div class="input-submit">
-            <button class="submit-btn" id="submit"></button>
-            <label for="submit">Login</label>
+            <button [disabled]="getForm['username'].errors || getForm['password'].errors" type="button" name= "btn_login" (click)="Register()"class="btn btn-primary btn-block mb-4">Sign in</button>
         </div>
         <div class="sign-up-link">
             <p>Don't have account? <a href="#" [routerLink]="['/signup']">Sign Up</a></p>
         </div>
-    </div>
+    </form>
 </body>
