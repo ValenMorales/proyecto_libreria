@@ -13,11 +13,13 @@ export class ArticlesComponent implements OnInit {
   articles: Article[] = [];
   facultades: Facultad[] =[];
   filtro: number= 0;
+  idFacultad : any= "646500a3f664671698ad7314"
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.getArticles();
+   // this.getArticles();
     this.getFacultades();
+    this.buscarPorFacultad(this.idFacultad);
   }
 
   getArticles() {
@@ -25,7 +27,6 @@ export class ArticlesComponent implements OnInit {
       (response) => {
         this.articles = response;
         console.log(this.articles)
-        console.log(this.articles[0].nombre)
       },
       (error) => {
         console.error(error);
@@ -38,16 +39,24 @@ export class ArticlesComponent implements OnInit {
       (response) => {
         this.facultades = response;
         console.log(this.facultades)
-        console.log(this.facultades[0].nombre)
       },
       (error) => {
         console.error(error);
       }
     );
   }
- setFiltro(){
-    console.log("kdjfkajdkfjskdjfskdj")
+ buscarPorFacultad(id?:string){
+  this.idFacultad = id;
+  this.http.get<Article[]>('http://localhost:3000/facultads/'+ this.idFacultad+ '/articulos').subscribe(
+    (response) => {
+      this.articles = response;
+      console.log(this.articles+ "articulos de salud")
+    },
+    (error) => {
+      console.error(error);
+    }
+  );
+
   }
- 
 }
 
