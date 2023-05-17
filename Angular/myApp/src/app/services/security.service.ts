@@ -13,15 +13,7 @@ export class SecurityService {
    }
 
    Register(modelo: UserCredentialsModel): Observable<any>{
-    return this.http.post<any>("http://localhost:3000/administradors", {
-      //nombre: "sergio",
-      //correo: modelo.username,
-    //cedula: "10012929",
-      //contraseña:modelo.password
-     // nombre: "sergio",
-    //  correo: "ajlk@gmail.com",
-     // cedula: "10012929",
-    //  contraseña: "lajskjadsdfjlak"
+    return this.http.post<any>("http://localhost:3000/loginAdmin", {
     nombre: modelo.username,
     correo: modelo.email,
     cedula: modelo.cedula,
@@ -29,4 +21,8 @@ export class SecurityService {
 
     });
    }
+
+    
+
+
 }

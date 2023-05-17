@@ -6,54 +6,19 @@
       <div class="row">
         <div class="col-12 col-lg-8">
           <div class="row">
-            <div class="col-12 col-lg-6">
-              <div class="card mb-3">
+            <div class="col-12 col-lg-6" *ngFor="let article of articles">
+              <div class="card mb-3" >
                 <img src="https://source.unsplash.com/random/1920x1080" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title roboto fw-bold">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                    This content is a little bit longer.</p>
+                  <h5 class="card-title roboto fw-bold">{{article.nombre}}</h5>
+                  <p class="card-text">{{article.descripcion}}</p>
                   <button class="btn btn-outline-dark mb-5">Continue Reading</button>
                   <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-lg-6">
-              <div class="card mb-3">
-                <img src="https://source.unsplash.com/random/1920x1080" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title roboto fw-bold">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                    This content is a little bit longer.</p>
-                  <button class="btn btn-outline-dark mb-5">Continue Reading</button>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-lg-6">
-              <div class="card mb-3">
-                <img src="https://source.unsplash.com/random/1920x1080" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title roboto fw-bold">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                    This content is a little bit longer.</p>
-                  <button class="btn btn-outline-dark mb-5">Continue Reading</button>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-lg-6">
-              <div class="card mb-3">
-                <img src="https://source.unsplash.com/random/1920x1080" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title roboto fw-bold">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                    This content is a little bit longer.</p>
-                  <button class="btn btn-outline-dark mb-5">Continue Reading</button>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
+          
+
           </div>
         </div>
         <div class="col-12 col-lg-4">
@@ -61,16 +26,9 @@
             <h4 class="roboto">Search</h4>
             <input type="text" class="form-control mb-5" placeholder="Search...">
 
-            <h4 class="roboto">Categories</h4>
+            <h4 class="roboto">Facultades</h4>
             <div class="list-group mb-5">
-              <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-                The current link item
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">A second link item</a>
-              <a href="#" class="list-group-item list-group-item-action">A third link item</a>
-              <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
-              <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">A disabled link
-                item</a>
+              <button *ngFor="let facultad of facultades; let filtro"  (click)="setFiltro()" class="list-group-item list-group-item-action">{{facultad.nombre}}</button>
             </div>
             
             <h4 claas="roboto">Popular Posts</h4>
