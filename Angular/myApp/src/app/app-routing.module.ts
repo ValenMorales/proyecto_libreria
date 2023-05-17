@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './public/errors/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { LoginComponent } from './components/login/login.component';
@@ -27,7 +28,6 @@ const routes: Routes = [
     path: "homeadmin",
     component: HomeadminComponent
   }
-
 ];
 
 @NgModule({

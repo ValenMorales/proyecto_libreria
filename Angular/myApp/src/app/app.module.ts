@@ -18,7 +18,6 @@ import { NotFoundComponent } from './public/errors/not-found/not-found.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
-
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '', component: HomeComponent },
@@ -27,8 +26,10 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     FooterComponent,
+    HeaderComponent,
+    NotFoundComponent,
+    InternalServerErrorComponent,
     HomeComponent,
     ArticlesComponent,
     SignupComponent,
@@ -36,7 +37,7 @@ const routes: Routes = [
     HomeadminComponent,
     InternalServerErrorComponent,
     NotFoundComponent
-    
+
   ],
   imports: [
     HttpClientModule,
@@ -47,6 +48,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     MatSlideToggleModule,
     MatMenuModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
