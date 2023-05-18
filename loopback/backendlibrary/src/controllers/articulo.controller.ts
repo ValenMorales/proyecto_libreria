@@ -116,7 +116,7 @@ export class ArticuloController {
     description: 'Articulo PATCH success',
   })
   async updateById(
-    @param.path.number('id') id: string,
+    @param.path.string('id') id: string,
     @requestBody({
       content: {
         'application/json': {
@@ -148,5 +148,6 @@ export class ArticuloController {
     await this.articuloRepository.deleteById(id);
   }
 
+  
   
 }
