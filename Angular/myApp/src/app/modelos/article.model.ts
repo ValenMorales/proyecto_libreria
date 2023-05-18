@@ -1,6 +1,6 @@
 export class  Article {
     nombre?: string;
-    estado?: number;
+    estado?: string;
     descripcion?: string;
     id?: string;
   }
