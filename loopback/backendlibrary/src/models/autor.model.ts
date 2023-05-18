@@ -15,7 +15,13 @@ export class Autor extends Entity {
     required: true,
   })
   nombre: string;
-
+  @property({
+    type: 'string',
+    required: false,
+    default: "autor"
+  })
+  rol: string;
+  
   @property({
     type: 'string',
     required: true,

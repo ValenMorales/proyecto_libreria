@@ -28,9 +28,8 @@
 
             <h4 class="roboto">Facultades</h4>
             <div class="list-group mb-5">
-              <button *ngFor="let facultad of facultades; let filtro"  (click)="setFiltro()" class="list-group-item list-group-item-action">{{facultad.nombre}}</button>
+              <button *ngFor="let facultad of facultades"  (click)="buscarPorFacultad(facultad.id)" class="list-group-item list-group-item-action">{{facultad.nombre}}</button>
             </div>
-            
             <h4 claas="roboto">Popular Posts</h4>
             <div class="list-group">
               <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">

@@ -27,8 +27,8 @@ this.createForm();
 
 createForm (){
   this.form = this.fb.group({
-    username:["funciona", [Validators.required, Validators.email, Validators.minLength(10)]],
-    password:["funciona2", [Validators.required, Validators.minLength(10)]]
+    username:["", [Validators.required, Validators.email, Validators.minLength(10)]],
+    password:["", [Validators.required, Validators.minLength(10)]]
 });
 }
 
