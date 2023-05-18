@@ -17,6 +17,9 @@ import { InternalServerErrorComponent } from './public/errors/internal-server-er
 import { NotFoundComponent } from './public/errors/not-found/not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { PerfilComponent } from './perfil/perfil.component';
+import { GestionadminComponent } from './components/gestionadmin/gestionadmin.component';
+import { GestionautorComponent } from './components/gestionautor/gestionautor.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -36,7 +39,10 @@ const routes: Routes = [
     LoginComponent,
     HomeadminComponent,
     InternalServerErrorComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    PerfilComponent,
+    GestionadminComponent,
+    GestionautorComponent,
 
   ],
   imports: [
