@@ -151,5 +151,38 @@ export class AdministradorController {
   }
 
 
-  
+  @post('/login')
+  async login(
+    @requestBody({
+      content: {
+        'application/json': {
+          schema: {
+            type: 'object',
+            properties: {
+              correo: {type: 'string'},
+              contrasena: {type: 'string'},
+            },
+            required: ['correo', 'contrasena'],
+          },
+        },
+      },
+    })
+    credenciales: Administrador,
+  ): Promise<{rol: string}> {
+    const usuario = await this.administradorRepository.findOne({
+      where: {
+        correo: credenciales.correo,
+        contrasena: credenciales.contrasena,
+      },
+    });
+    if (usuario) {
+      // El usuario ha proporcionado las credenciales correctas
+      // Se puede permitir el acceso a la aplicación
+      return {rol: usuario.rol};
+    } else {
+      // El usuario ha proporcionado credenciales incorrectas
+      // Se debe indicar al usuario que ha ocurrido un error
+      return {rol: ""};
+    }
+  }
 }

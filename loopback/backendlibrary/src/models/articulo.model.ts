@@ -34,6 +34,12 @@ export class Articulo extends Entity {
   })
   descripcion?: string;
 
+  @property({
+    type: 'string',
+    required: true,
+  })
+ url : string;
+
   @belongsTo(() => Autor)
   autorId: string;
 
