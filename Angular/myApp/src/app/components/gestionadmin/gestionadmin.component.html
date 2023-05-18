@@ -1,1 +1,20 @@
-<p>gestionadmin works!</p>
+<div class="container">
+<div *ngFor="let article of articles; let i = index">
+    <div class="card">
+      <div class="card-header" [id]="'heading' + i">
+        <h2 class="mb-0">
+          <button class="btn btn-link" type="button" (click)="toggleExpanded(i)" [attr.aria-expanded]="isExpanded(i) ? 'true' : 'false'" [attr.aria-controls]="'collapse' + i">
+            {{ article.nombre }}
+          </button>
+        </h2>
+      </div>
+      <div [id]="'collapse' + i" [ngClass]="{'collapse': !isExpanded(i), 'show': isExpanded(i)}" [attr.aria-labelledby]="'heading' + i" data-parent="#accordion">
+        <div class="card-body">
+          <p>{{ article.descripcion }}</p>
+          <button class="btn btn-success" (click)="acceptArticle(article)">Aceptar</button>
+          <button class="btn btn-danger" (click)="rejectArticle(article)">Rechazar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

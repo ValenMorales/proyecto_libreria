@@ -7,6 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HomeadminComponent } from './components/homeadmin/homeadmin.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { GestionadminComponent } from './components/gestionadmin/gestionadmin.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path:"perfil",
     component: PerfilComponent
+  },
+  {
+    path: "gestionadmin",
+    component:GestionadminComponent
   }
 ];
 
