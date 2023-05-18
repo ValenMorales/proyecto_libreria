@@ -147,4 +147,6 @@ export class ArticuloController {
   async deleteById(@param.path.number('id') id: string): Promise<void> {
     await this.articuloRepository.deleteById(id);
   }
+
+  
 }
