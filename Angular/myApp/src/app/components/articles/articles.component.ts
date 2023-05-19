@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { Article } from 'src/app/modelos/article.model';
 import { Facultad } from 'src/app/modelos/facultad.model';
 import { RandomUrl } from 'src/app/modelos/randomUrl';
-import axios from 'axios';
 
 @Component({
   selector: 'app-articles',
@@ -19,7 +18,7 @@ export class ArticlesComponent implements OnInit {
   randomurls: RandomUrl[]=[];
   facultades: Facultad[] =[];
   filtro: number= 0;
-  mostrarTodos: boolean = true; // Variable para controlar si se muestran todos los artículos o los filtrados
+  mostrarTodos: boolean = true; 
   articulosFiltrados: Article[] = [];
   idFacultad : any= "646500a3f664671698ad7314";
   constructor(private http: HttpClient) { 

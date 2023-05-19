@@ -7,6 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HomeadminComponent } from './components/homeadmin/homeadmin.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { GestionautorComponent } from './components/gestionautor/gestionautor.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: "articles",
     component: ArticlesComponent
+  },
+  {
+    path: "gestionautor",
+    component: GestionautorComponent
   },
   {
     path: "login",
