@@ -8,6 +8,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { HomeadminComponent } from './components/homeadmin/homeadmin.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { GestionadminComponent } from './components/gestionadmin/gestionadmin.component';
+import { GestionautorComponent } from './components/gestionautor/gestionautor.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: "gestionadmin",
     component:GestionadminComponent
+  },
+  {
+    path: "gestionautor",
+    component:GestionautorComponent
   }
 ];
 

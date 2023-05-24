@@ -15,12 +15,21 @@
             <a class="nav-link" aria-current="page"  [routerLink]="['/articles']">Articles</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" [routerLink]="['/login']">Login</a>
+            <a class="nav-link" aria-current="page" [routerLink]="['/login']"  *ngIf="!rol">Login </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" [routerLink]="['/signup']">Sign Up</a>
+            <a class="nav-link" aria-current="page" [routerLink]="['/signup']"  *ngIf="!rol" >Sign Up </a>
           </li>
+
+          <li class="nav-item">
+            <a class = "nav-link" aria-current="page" [routerLink]="['/gestionadmin']" *ngIf=" rol.includes('admin')"> gestionar articulos</a>
+            </li>
+          
+          <li class="nav-item">
+            <a class = "nav-link" aria-current="page" [routerLink]="['/gestionautor']" *ngIf=" rol.includes('autor')"> subir articulos</a>
+            </li>
         </ul>
+
         <form>
           <input class="form-control" type="text" placeholder="Search" aria-label="Search">
         </form>

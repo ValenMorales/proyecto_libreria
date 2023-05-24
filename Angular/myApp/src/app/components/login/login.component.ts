@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder, FormGroup, MinLengthValidator, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { UserLoginModel } from 'src/app/modelos/user-logi.model';
 import { LoginService } from 'src/app/services/login.service';
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit{
   form: FormGroup = new FormGroup({});
 constructor (
   private fb: FormBuilder,
-  private LoginService: LoginService
+  private LoginService: LoginService,
+  private router: Router
 ) {}
 
 
@@ -41,6 +43,19 @@ Register(){
     modelo.password = this.getForm['password'].value;
     console.log(modelo.email, modelo.password);
     this.LoginService.realizarLogin(modelo)
+     .then(rol => {
+    console.log(rol);
+    if (rol.includes("admi")) {
+      this.router.navigate(['/gestionadmin']); // Redirige a la página de gestión de administrador
+    } else if (rol.includes("autor")) {
+      this.router.navigate(['/gestionautor']); // Redirige a la página de gestión de autor
+    } else {
+      alert('El usuario no se encuentra registrado');
+    }
+  })
+  .catch(error => {
+    console.error(error);
+  });
   }
 }
 

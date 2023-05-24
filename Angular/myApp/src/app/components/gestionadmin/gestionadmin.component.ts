@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Article } from 'src/app/modelos/article.model';
 import { Facultad } from 'src/app/modelos/facultad.model';
-
+import { LoginService } from 'src/app/services/login.service';
 @Component({
   selector: 'app-articles',
   templateUrl: './gestionadmin.component.html',
@@ -11,12 +11,16 @@ import { Facultad } from 'src/app/modelos/facultad.model';
 })
 export class GestionadminComponent implements OnInit {
   articles: Article[] = [];
-  constructor(private http: HttpClient) { }
+ 
+
+  constructor(private http: HttpClient, private login: LoginService) { }
   expandedItems: boolean[] = [];
 
+  get rol(): string {
+    return this.login.rol;
+  }
   ngOnInit() {
     this.getArticles();
-   
   }
 
   isExpanded(index: number): boolean {
@@ -72,7 +76,7 @@ export class GestionadminComponent implements OnInit {
        }
       
       }
-      this.articles =pendientes
+     this.articles =pendientes
       },
       (error) => {
         console.error(error);
