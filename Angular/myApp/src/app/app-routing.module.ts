@@ -1,32 +1,38 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './public/errors/not-found/not-found.component';
-import { HomeComponent } from './public/general/home/home.component';
-// creacion de las rutas 
+import { HomeComponent } from './components/home/home.component';
+import { ArticlesComponent } from './components/articles/articles.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { HomeadminComponent } from './components/homeadmin/homeadmin.component';
+import { PerfilComponent } from './perfil/perfil.component';
+
 const routes: Routes = [
   {
-   path: 'home',
-   component: HomeComponent
+    path: "",
+    component: HomeComponent
   },
-  // si no se especifica la ruta,
-// redirigir a home
   {
-    path: '',
-    pathMatch : "full",
-    redirectTo: "/home"
+    path: "articles",
+    component: ArticlesComponent
   },
-
-   {
-    path: "seguridad",
-    loadChildren:() => import ("./modulos/seguridad/seguridad.module").then (x =>x.SeguridadModule)
-   },
-
-    // si me pide una ruta inexistente 
   {
-    path: '**',
-    component: NotFoundComponent
-   }
-
+    path: "login",
+    component: LoginComponent
+  },
+  {
+    path: "signup",
+    component: SignupComponent
+  },
+  {
+    path: "homeadmin",
+    component: HomeadminComponent
+  },
+  {
+    path:"perfil",
+    component: PerfilComponent
+  }
 ];
 
 @NgModule({

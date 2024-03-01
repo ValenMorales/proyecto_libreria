@@ -15,7 +15,13 @@ export class Autor extends Entity {
     required: true,
   })
   nombre: string;
-
+  @property({
+    type: 'string',
+    required: false,
+    default: "autor"
+  })
+  rol: string;
+  
   @property({
     type: 'string',
     required: true,
@@ -30,7 +36,7 @@ export class Autor extends Entity {
 
   @property({
     type: 'string',
-    default: none,
+    default: "",
   })
   cedula?: string;
 

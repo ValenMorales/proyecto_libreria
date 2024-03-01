@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+#background {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #505050;
+}
+
+#backgroundimage{
+    height: 876px;
+    width: 100%;
+    object-fit: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+    filter: brightness(40%) blur(4px);
+}
+
+.centered {
+    position: absolute;
+    font-size: 28px;
+    color: white;
+    font-family: 'Secular One', sans-serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

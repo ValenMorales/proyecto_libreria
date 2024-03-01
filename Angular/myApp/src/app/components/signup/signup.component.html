@@ -1,0 +1,32 @@
+<body>
+    <div class="signup-box">
+        <form [formGroup] = "form">
+        <div class="signup-header">
+            <header>Sign-Up</header>
+        </div>
+        <div class="input-box">
+            <input formControlName="name" name="name" type="text" class="form-control" placeholder="nombre" autocomplete="off" required/>
+        </div>
+        <div class="input-box">
+            <input formControlName='cedula' name="cedula" type="text" class="form-control" placeholder="cedula" autocomplete="off" required/>
+        </div>
+        <div class="input-box">
+            <input formControlName="email" name="email" type="text" class="form-control" placeholder="correo" autocomplete="off" required/>
+        </div>
+       
+        <div class="input-box">
+            <input formControlName="password" name="password" type="text" class="form-control" placeholder="contraseña" autocomplete="off" required/>
+        </div>
+        <div class="forgot">
+            <section>
+                <input type="checkbox" id="check">
+                <label for="check">I accept the terms & conditions</label>
+            </section>
+        </div>
+        <div class="input-submit">
+            <button [disabled]="getForm['name'].errors || getForm['password'].errors" type="button" name= "btn_login" (click)="Register()"class="submit-btn"></button>
+            <label for="submit">Sign Up</label>
+        </div>
+    </form>
+    </div>
+</body>
